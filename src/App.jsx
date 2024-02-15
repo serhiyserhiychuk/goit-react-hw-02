@@ -33,7 +33,11 @@ const App = () => {
   return (
     <>
       <Describtion />
-      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
+      <Options
+        updateFeedback={updateFeedback}
+        totalFeedback={totalFeedback}
+        setFeedback={setFeedback}
+      />
       {totalFeedback ? (
         <Feedback
           feedback={feedback}
