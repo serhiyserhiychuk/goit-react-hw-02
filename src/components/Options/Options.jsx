@@ -1,15 +1,38 @@
-const Options = (updateFeedback) => {
+import css from "./Options.module.css";
+
+const Options = (updateFeedback, totalFeedback) => {
+  console.log(totalFeedback);
   return (
-    <ul>
+    <ul className={css.list}>
       <li>
-        <button onClick={() => updateFeedback("good")}>Good</button>
+        <button
+          className={css.button}
+          onClick={() => updateFeedback.updateFeedback("good")}
+        >
+          Good
+        </button>
       </li>
       <li>
-        <button onClick={() => updateFeedback("neutral")}>Neutral</button>
+        <button
+          className={css.button}
+          onClick={() => updateFeedback.updateFeedback("neutral")}
+        >
+          Neutral
+        </button>
       </li>
       <li>
-        <button onClick={() => updateFeedback("bad")}>Bad</button>
+        <button
+          className={css.button}
+          onClick={() => updateFeedback.updateFeedback("bad")}
+        >
+          Bad
+        </button>
       </li>
+      {totalFeedback && (
+        <li>
+          <button className={css.button}>Reset</button>
+        </li>
+      )}
     </ul>
   );
 };
